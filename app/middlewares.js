@@ -3,7 +3,9 @@
 
 module.exports = {
     log: (req, res, next) => {
-        console.log('Incoming request %s:%s', req.method, req.url);
+        res.on('finish', () => {
+            return console.log('%s %d %s', req.method, res.statusCode, req.url);
+        });
         next();
     },
 };
