@@ -1,0 +1,16 @@
+{
+  "name": "gitty",
+  "version": "0.0.1",
+  "private": true,
+  "description": "The github event browser",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "node run.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/royalpinto/gitty.git"
+  },
+  "author": "Royal Pinto <royalpinto@gmail.com>"
+}
