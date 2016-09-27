@@ -7,6 +7,8 @@ const router = new Router();
 
 router.use(/(?:)/, middlewares.log);
 router.use(/(?:)/, middlewares.easyResponse);
+router.use(/(?:)/, middlewares.querystring);
+router.use(/(?:)/, middlewares.paginate(10, 50));
 router.use(/^\/api\/events\//, events);
 
 router.use(/(?:)/, (req, res) => {
