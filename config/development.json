@@ -1,6 +1,6 @@
 {
     "db": {
-        "uri": "mongodb://localhost/store"
+        "uri": "mongodb://localhost/gitty"
     },
     "server": {
         "port": 3000
