@@ -43,5 +43,8 @@
         }
       ]
     }
+  },
+  "dependencies": {
+    "mongodb": "^2.2.10"
   }
 }
