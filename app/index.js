@@ -6,6 +6,7 @@ const events = require('./../routes/events');
 const router = new Router();
 
 router.use(/(?:)/, middlewares.log);
+router.use(/(?:)/, middlewares.easyResponse);
 router.use(/^\/api\/events\//, events);
 
 router.use(/(?:)/, (req, res) => {
