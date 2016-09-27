@@ -2,4 +2,7 @@
     "db": {
         "uri": "mongodb://localhost/store"
     },
+    "server": {
+        "port": 3000
+    }
 }
