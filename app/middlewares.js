@@ -1,6 +1,10 @@
 'use strict';
 
 
+const url = require('url');
+const querystring = require('querystring');
+
+
 module.exports = {
     log: (req, res, next) => {
         res.on('finish', () => {
@@ -15,6 +19,11 @@ module.exports = {
             res.end(JSON.stringify(data));
         };
 
+        next();
+    },
+
+    querystring: (req, res, next) => {
+        req.query = querystring.parse(url.parse(req.url).query);
         next();
     },
 };
