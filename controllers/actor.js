@@ -101,6 +101,18 @@ class ActorController extends Controller {
         ;
     }
 
+    deleteEvents(id) {
+        return models
+        .collection(collectionName)
+        .then(collection => {
+            collection.deleteMany({
+                'actor.login': id,
+            })
+            ;
+        })
+        ;
+    }
+
 }
 
 
