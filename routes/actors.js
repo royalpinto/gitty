@@ -17,4 +17,16 @@ router.get(/^\/api\/actors\/(\w+)\/repos\/top\/$/, (req, res, next) => {
 });
 
 
+router.get(/^\/api\/actors\/(\w+)\/$/, (req, res, next) => {
+    let id = req.params[0];
+    let controller = new Controller();
+    controller.getById(id)
+    .then(data => {
+        res.json(data);
+    })
+    .catch(console.error)
+    ;
+});
+
+
 module.exports = router;
