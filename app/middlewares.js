@@ -33,6 +33,11 @@ module.exports = {
             res.end(JSON.stringify(data));
         };
 
+        res.status = status => {
+            res.statusCode = status;
+            return res;
+        };
+
         next();
     },
 
