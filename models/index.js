@@ -19,6 +19,16 @@ init();
 
 const models = {
 
+    destroy: () => {
+        dbPromise
+        .then(db => {
+            db.close();
+            dbPromise = null;
+        })
+        .catch(console.error)
+        ;
+    },
+
     collection: name => {
         // Init only for the first time.
         if (!dbPromise) {
