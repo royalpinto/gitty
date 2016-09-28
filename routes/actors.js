@@ -29,4 +29,16 @@ router.get(/^\/api\/actors\/(\w+)\/$/, (req, res, next) => {
 });
 
 
+router.delete(/^\/api\/actors\/(\w+)\/events\/$/, (req, res, next) => {
+    let id = req.params[0];
+    let controller = new Controller();
+    controller.deleteEvents(id)
+    .then(() => {
+        res.status(204).end();
+    })
+    .catch(console.error)
+    ;
+});
+
+
 module.exports = router;
