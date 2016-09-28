@@ -6,9 +6,10 @@ const router = new Router();
 const Controller = require('./../controllers/actor');
 
 
-router.get(/^\/api\/actors\//, (req, res, next) => {
+router.get(/^\/api\/actors\/(\w+)\/repos\/top\/$/, (req, res, next) => {
+    let id = req.params[0];
     let controller = new Controller();
-    controller.getById('mattholl')
+    controller.getTopRepo(id)
     .then(data => {
         res.json(data);
     })
