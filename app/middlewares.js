@@ -49,4 +49,27 @@ module.exports = {
             next();
         };
     },
+
+    filter: (req, res, next) => {
+        var filter = {};
+        for (var key in req.query) {
+            if (!key) {
+                continue;
+            }
+            if (['limit', 'skip'].indexOf(key) > -1) {
+                continue;
+            }
+            var value = req.query[key];
+            if (value instanceof Array) {
+                filter[key] = {
+                    $in: value,
+                };
+            } else {
+                filter[key] = value;
+            }
+        }
+
+        req.query.filter = filter;
+        next();
+    },
 };
