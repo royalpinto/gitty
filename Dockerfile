@@ -21,9 +21,10 @@ RUN cd /home/gitty/gitty/ && git clean -fdx
 # Install dependencies.
 RUN cd /home/gitty/gitty/ && npm install --production
 
+# Copy and extract demo JSON.
 RUN cd /home/gitty/gitty/ && wget -c 'http://data.githubarchive.org/2015-01-01-15.json.gz'
-
 RUN cd /home/gitty/gitty/ && gzip -dv 2015-01-01-15.json.gz
+
 
 # Setup workign directory.
 WORKDIR /home/gitty/gitty/
