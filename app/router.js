@@ -54,6 +54,8 @@ class Router {
                 // Skip if defined regex is not matching with the incoming url.
                 let exec = regex.exec(path);
                 if (exec) {
+                    // These are groups extracted from the regex matching URL.
+                    // Usefull for routes to parse the params in the URL path.
                     req.params = exec.slice(1);
                 } else {
                     continue;
