@@ -9,6 +9,9 @@
  */
 class Controller {
 
+    // User would be the person (logged in) accessing the APIs.
+    // Not getting used for this demo  as we don't have
+    // authentication and authorizations.
     constructor(user) {
         this.user = user;
     }
