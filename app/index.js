@@ -3,6 +3,7 @@ const Router = require('./router');
 const middlewares = require('./middlewares');
 const events = require('./../routes/events');
 const actors = require('./../routes/actors');
+const repos = require('./../routes/repos');
 
 const router = new Router();
 
@@ -14,6 +15,7 @@ router.use(/(?:)/, middlewares.filter);
 
 router.use(/^\/api\/events\//, events);
 router.use(/^\/api\/actors\//, actors);
+router.use(/^\/api\/repos\//, repos);
 
 router.use(/(?:)/, (req, res) => {
     res.end('Hi');
