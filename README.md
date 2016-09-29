@@ -57,7 +57,7 @@ npm start
 #### [Demonstration](https://github.com/royalpinto/gitty/tree/dev/demo)
 
 #### Documentation
-APIs are documented according to [API Blueprint](https://apiblueprint.org/) specification. Use your favorite API Blueprint renderer tool to render from the API documentation available here: [doc/api/index.apib](https://github.com/royalpinto/store/blob/dev/doc/api/index.apib).
+APIs are documented according to [API Blueprint](https://apiblueprint.org/) specification. Use your favorite API Blueprint renderer tool to render from the API documentation available here: [doc/api.apib](https://github.com/royalpinto/store/blob/dev/doc/api.apib).
 
 One example of generating doc from the API spec is given below:
 ```bash
@@ -65,5 +65,5 @@ One example of generating doc from the API spec is given below:
 npm install aglio
 
 # Convert doc spec to html and open it on the browser.
-aglio -i doc/api/index.apib -o output.html
+aglio -i doc/api.apib -o output.html
 ```
