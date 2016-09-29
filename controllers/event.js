@@ -9,6 +9,11 @@ const Controller = require('./controller');
 class EventController extends Controller {
 
     get(query, limit, skip, order) {
+        if (query.repoId) {
+            query['repo.id'] = parseInt(query.repoId, 10);
+            delete query.repoId;
+        }
+
         return models
         .collection(collectionName)
         .then(collection => {
