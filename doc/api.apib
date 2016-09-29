@@ -59,3 +59,32 @@ Browse for events.
                 .
                 ]
             }
+
+
+# Group Actors
+
+## Actors [/api/actors/{actorlogin}/]
+
+### Get Actor details [GET]
+
+Get for details.
+
++ Parameters
+    + actorlogin - The actor login.
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "id":665991,
+                "login":"petroav",
+                "gravatar_id":"",
+                "url":"https://api.github.com/users/petroav",
+                "avatar_url":"https://avatars.githubusercontent.com/u/665991?",
+                "repos":[{
+                    "id":28688495,
+                    "name":"petroav/6.828",
+                    "url":"https://api.github.com/repos/petroav/6.828"
+                }]
+            }
