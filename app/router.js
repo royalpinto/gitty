@@ -31,7 +31,6 @@ class Router {
 
     dispatch(req, res, next) {
         let path = url.parse(req.url).pathname;
-        let instance = this;
 
         let patternmatcher = sindex => {
             let matched = false;
@@ -41,8 +40,8 @@ class Router {
                 patternmatcher(index + 1);
             };
 
-            for (index = sindex; index < instance._patterns.length; index++) {
-                let pattern = instance._patterns[index];
+            for (index = sindex; index < this._patterns.length; index++) {
+                let pattern = this._patterns[index];
                 let regex = pattern[0];
                 let method = pattern[2];
 
