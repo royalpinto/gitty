@@ -8,8 +8,7 @@
     "lint": "eslint --ignore-path .gitignore .",
     "start": "node run.js",
     "dump": "node dump.js",
-    "demo": "npm run dump -- 2015-01-01-15.json && npm start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "demo": "npm run dump -- 2015-01-01-15.json && npm start"
   },
   "repository": {
     "type": "git",
