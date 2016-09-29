@@ -68,10 +68,8 @@ class RepoController extends Controller {
                             return reject(err);
                         }
                         resolve(result.map(doc => {
-                            return {
-                                repo: doc.repo,
-                                topContributor: doc.actor,
-                            };
+                            doc.repo.topContributor = doc.actor;
+                            return doc.repo;
                         }));
                     });
                 }),
