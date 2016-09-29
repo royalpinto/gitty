@@ -96,8 +96,11 @@ class ActorController extends Controller {
                     if (err) {
                         return reject(err);
                     }
-                    let doc = result[0];
-                    resolve(doc ? doc.repo : null);
+                    if (result.length === 0) {
+                        return reject(new errors
+                            .NotFound("No repository found."));
+                    }
+                    resolve(result[0].repo);
                 })
                 ;
             });
