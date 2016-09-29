@@ -107,3 +107,40 @@ Get given actor's top repository by highest contributions and recent contributio
                 "name":"petroav/6.828",
                 "url":"https://api.github.com/repos/petroav/6.828"
             }
+
+
+# Group Repository
+
+## Repositories [/api/repos/{?limit,skip}]
+
+### Get Repositories with Top Contributor [GET]
+
++ Parameters
+    + limit (number, optional) - Limit by number of documents to be fetched. Max limit allowed is 50.
+        + Default: 10
+    + skip (number, optional) - Skip number of documents before applying the limit.
+        + Default: 0
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "count": 230,
+                "data": [{
+                    "id":28689741,
+                    "name":"MCodingHero/hai",
+                    "url":"https://api.github.com/repos/MCodingHero/hai"
+                    "topContributor":{
+                        "id":10252115,
+                        "login":"MCodingHero",
+                        "gravatar_id":"",
+                        "url":"https://api.github.com/users/MCodingHero",
+                        "avatar_url":"https://avatars.githubusercontent.com/u/10252115?"
+                    }
+                }
+                .
+                .
+                .
+                ]
+            }
