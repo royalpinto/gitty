@@ -22,7 +22,7 @@ A project developed using `node` to provide simple APIs on github events.
 {
     "db": {
         // This is a mandatory field, will be used to connect to mongo db server.
-        "uri": '<mongodb database uri>' // Ex: "mongodb://localhost/store"
+        "uri": '<mongodb database uri>' // Ex: "mongodb://localhost/gitty"
     },
 
 
