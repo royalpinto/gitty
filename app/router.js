@@ -33,11 +33,11 @@ class Router {
         let path = url.parse(req.url).pathname;
         let instance = this;
 
-        let patternmatcher = function(sindex) {
+        let patternmatcher = sindex => {
             let matched = false;
             let index;
 
-            let _next = function() {
+            let _next = () => {
                 patternmatcher(index + 1);
             };
 
