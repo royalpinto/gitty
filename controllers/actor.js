@@ -1,5 +1,3 @@
-// db.events.aggregate();
-
 'use strict';
 
 
