@@ -12,6 +12,7 @@ A project developed using `node` to provide simple APIs on github events.
  * No production dependencies other than `mongodb` database driver.
  * Standard design patterns like `middlewares` for easy middleware hooks.
  * ES6 Standard
+ * Works well on NodeJS `4.*.*` stable LTS versions.
 
 #### Configuration
  * The configuration files have to be placed in the config directory and should have filename pattern: `<env>.json`.
