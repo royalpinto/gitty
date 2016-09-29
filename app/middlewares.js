@@ -56,15 +56,15 @@ module.exports = {
     },
 
     filter: (req, res, next) => {
-        var filter = {};
-        for (var key in req.query) {
+        let filter = {};
+        for (let key in req.query) {
             if (!key) {
                 continue;
             }
             if (['limit', 'skip'].indexOf(key) > -1) {
                 continue;
             }
-            var value = req.query[key];
+            let value = req.query[key];
             if (value instanceof Array) {
                 filter[key] = {
                     $in: value,
