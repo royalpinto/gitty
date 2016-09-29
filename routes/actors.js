@@ -1,6 +1,7 @@
 'use strict';
 
 
+const errors = require('./../errors');
 const Router = require('./../app/router');
 const router = new Router();
 const Controller = require('./../controllers/actor');
@@ -13,6 +14,9 @@ router.get(/^\/api\/actors\/(\w+)\/repos\/top\/$/, (req, res, next) => {
     .then(data => {
         res.json(data);
     })
+    .catch(error => {
+        errors.handle(req, res, error);
+    })
     ;
 });
 
@@ -24,7 +28,9 @@ router.get(/^\/api\/actors\/(\w+)\/$/, (req, res, next) => {
     .then(data => {
         res.json(data);
     })
-    .catch(console.error)
+    .catch(error => {
+        errors.handle(req, res, error);
+    })
     ;
 });
 
@@ -36,7 +42,9 @@ router.delete(/^\/api\/actors\/(\w+)\/events\/$/, (req, res, next) => {
     .then(() => {
         res.status(204).end();
     })
-    .catch(console.error)
+    .catch(error => {
+        errors.handle(req, res, error);
+    })
     ;
 });
 
