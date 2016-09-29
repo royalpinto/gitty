@@ -12,7 +12,6 @@ router.get(/^\/api\/repos\//, (req, res, next) => {
     let query = req.query;
     controller.get(query.filter, query.limit, query.skip, query.order)
     .then(data => {
-        console.log(data);
         res.json(data);
     })
     .catch(error => {
