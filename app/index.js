@@ -22,7 +22,7 @@ router.use(/(?:)/, (req, res) => {
 });
 
 
-const server = http.createServer(function(req, res) {
+const server = http.createServer((req, res) => {
     router.dispatch(req, res);
 });
 
