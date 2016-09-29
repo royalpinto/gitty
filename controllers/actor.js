@@ -3,6 +3,7 @@
 'use strict';
 
 
+const errors = require('./../errors');
 const collectionName = 'events';
 const models = require('./../models');
 const Controller = require('./controller');
@@ -51,8 +52,13 @@ class ActorController extends Controller {
             ]);
         })
         .then(result => {
-            let user = result[0].actor;
-            user.repos = result[1].map(doc => {
+            let user = result[0];
+            if (!user) {
+                throw new errors.NotFound("Actor not found.");
+            }
+
+            let userinfo = user.actor;
+            userinfo.repos = result[1].map(doc => {
                 return doc.repo;
             });
             return user;
