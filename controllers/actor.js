@@ -61,7 +61,7 @@ class ActorController extends Controller {
             userinfo.repos = result[1].map(doc => {
                 return doc.repo;
             });
-            return user;
+            return userinfo;
         })
         ;
     }
