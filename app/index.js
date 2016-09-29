@@ -1,3 +1,6 @@
+'use strict';
+
+
 const http = require('http');
 const Router = require('./router');
 const errors = require('./../errors');
