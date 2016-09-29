@@ -1,5 +1,6 @@
 const http = require('http');
 const Router = require('./router');
+const errors = require('./../errors');
 const middlewares = require('./middlewares');
 const events = require('./../routes/events');
 const actors = require('./../routes/actors');
@@ -18,7 +19,7 @@ router.use(/^\/api\/actors\//, actors);
 router.use(/^\/api\/repos\//, repos);
 
 router.use(/(?:)/, (req, res) => {
-    res.end('Hi');
+    errors.handle(req, res, new errors.NotFound('Not found.'));
 });
 
 
