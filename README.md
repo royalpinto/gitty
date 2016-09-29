@@ -51,6 +51,15 @@ npm install
 export NODE_ENV=<env>
 # Ex: export NODE_ENV=production
 
+# Dump data.
+# Download source file (Command on linux).
+wget -c 'http://data.githubarchive.org/2015-01-01-15.json.gz'
+gzip -dv 2015-01-01-15.json.gz
+
+# Load
+npm run dump <JSON file path>
+# Ex: `npm run dump 2015-01-01-15.json`
+
 npm start
 ```
 
